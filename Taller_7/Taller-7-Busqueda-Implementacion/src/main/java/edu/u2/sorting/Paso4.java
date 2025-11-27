@@ -43,4 +43,45 @@ public class Paso4 {
         }
         return -1;
     }
+
+    // METODOS PARA EL ANALISIS COMPARATIVO (DEMOSTRACION)
+
+    /**
+     * Cuenta las comparaciones realizadas por la Busqueda Clásica.
+     */
+    public static int countComparisonsClassic(int[] a, int key) {
+        int count = 0;
+        for (int i = 0; i < a.length; i++) {
+            count++; // Comparacion del bucle (i < n)
+            count++; // Comparacion del dato (a[i] == key)
+            if (a[i] == key) return count;
+        }
+        return count; // Retornamos el total si no se encuentra
+    }
+
+    /**
+     * Cuenta las comparaciones realizadas por la Busqueda con Centinela.
+     */
+    public static int countComparisonsSentinel(int[] a, int key) {
+        if (a == null || a.length == 0) return 0;
+        int n = a.length;
+        int last = a[n - 1];
+        int count = 0;
+
+        // Comparacion inicial del último
+        count++;
+        if (last == key) return count;
+
+        a[n - 1] = key;
+        int i = 0;
+
+        while (true) {
+            count++; // Comparacion del while (a[i] != key)
+            if (a[i] == key) break;
+            i++;
+        }
+
+        a[n - 1] = last;
+        return count;
+    }
 }
