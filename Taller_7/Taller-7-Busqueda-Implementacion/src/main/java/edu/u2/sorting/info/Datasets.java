@@ -1,6 +1,8 @@
-package edu.u2.sorting;
+package edu.u2.sorting.info;
 
-public class DatasetPrueba {
+import edu.u2.sorting.node.Node;
+
+public class Datasets {
     /**
      * Dataset A: Desordenado con duplicados
      * Útil para: Búsqueda Secuencial, Centinela.

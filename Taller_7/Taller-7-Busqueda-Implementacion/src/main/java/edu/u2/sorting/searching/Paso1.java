@@ -1,4 +1,4 @@
-package edu.u2.sorting;
+package edu.u2.sorting.searching;
 
 import edu.u2.sorting.node.Node;
 
@@ -13,12 +13,16 @@ public class Paso1 {
         return -1;
     }
 
-    public static Node findFirst(Node head, int key) {
+    public static int indexOfFirst(Node head, int key) {
+        int index = 0;
         Node current = head;
+
         while (current != null) {
-            if (current.data == key) return current;
+            if (current.data == key) return index;
             current = current.next;
+            index++;
         }
-        return null;
+        return -1; // no encontrado
     }
+
 }

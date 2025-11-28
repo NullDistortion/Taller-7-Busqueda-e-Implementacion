@@ -1,4 +1,4 @@
-package edu.u2.sorting;
+package edu.u2.sorting.searching;
 
 public class Paso5 {
 

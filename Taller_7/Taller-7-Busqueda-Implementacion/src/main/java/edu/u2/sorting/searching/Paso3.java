@@ -1,4 +1,4 @@
-package edu.u2.sorting;
+package edu.u2.sorting.searching;
 
 import edu.u2.sorting.node.Node;
 
@@ -21,18 +21,19 @@ public class Paso3 {
         return result;
     }
 
-    public static List<Node> findAll(Node head, Predicate<Node> p) {
-        List<Node> result = new ArrayList<>();
+    public static List<Integer> findAllIndexes(Node head, Predicate<Node> p) {
+        List<Integer> result = new ArrayList<>();
+        int index = 0;
         Node current = head;
 
         while (current != null) {
-            if (p.test(current)) {
-                result.add(current);
-            }
+            if (p.test(current)) result.add(index);
             current = current.next;
+            index++;
         }
         return result;
     }
+
 
 
     public static IntPredicate isPair() {
